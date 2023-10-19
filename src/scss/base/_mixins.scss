@@ -49,3 +49,24 @@
     gap: $gap;
     grid-template-columns: repeat($columns, 1fr);
 }
+
+@mixin container {
+    width: min(95%, 120rem);
+    margin: 0 auto;
+}
+
+@mixin sm-container {
+    width: min(95%, 60rem);
+    margin: 0 auto;
+}
+@mixin headings{
+    font-family: v.$main-font;
+    font-weight: v.$black-font;
+    margin: 2rem 0;
+}
+
+@mixin page-name{
+    @include headings;
+    margin: 6rem 0 3rem 0;
+    text-align: center;
+}

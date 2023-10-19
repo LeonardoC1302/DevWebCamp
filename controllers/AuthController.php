@@ -41,7 +41,7 @@ class AuthController {
         $alerts = user::getalerts();
         
         $router->render('auth/login', [
-            'title' => 'Log In',
+            'title' => 'Login',
             'alerts' => $alerts
         ]);
     }

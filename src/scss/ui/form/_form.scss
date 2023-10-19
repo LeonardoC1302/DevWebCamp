@@ -1,0 +1,29 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.form {
+    display: flex;
+    flex-direction: column;
+    &__field{
+        display: flex;
+        flex-direction: column;
+        gap:1rem;
+        margin: 1.5rem 0;
+    }
+    &__label{
+        display: block;
+        font-size: 1.8rem;
+        color: rgba(v.$black-color, .8);
+    }
+    &__input{
+        padding: 1rem;
+        border: 1px solid darken(v.$light-gray, 20);
+        border-radius: .5rem;
+    }
+
+    &__submit{
+        @include m.button(v.$blue, v.$white);
+        width: auto;
+        align-self: flex-start;
+    }
+}
