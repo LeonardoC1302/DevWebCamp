@@ -30,7 +30,7 @@ class User extends ActiveRecord {
         $this->password2 = $args['password2'] ?? '';
         $this->confirmed = $args['confirmado'] ?? 0;
         $this->token = $args['token'] ?? '';
-        $this->admin = $args['admin'] ?? '';
+        $this->admin = $args['admin'] ?? 0;
     }
 
     public function validateLogin() {

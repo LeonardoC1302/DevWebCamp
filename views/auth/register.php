@@ -2,18 +2,22 @@
     <h2 class="auth__heading"> <?php echo $title; ?> </h2>
     <p class="auth__text">Register into WebDevCamp</p>
 
-    <form class="form">
+    <?php
+        include_once __DIR__ . '/../templates/alerts.php';
+    ?>
+
+    <form method="POST" action="/register" class="form">
         <div class="form__field">
             <label for="name" class="form__label">Name</label>
-            <input class="form__input" type="text" placeholder="Your Name" id="name" name="name">
+            <input class="form__input" type="text" placeholder="Your Name" id="name" name="name" value="<?php echo $user->name; ?>">
         </div> <!-- / .form__field -->
         <div class="form__field">
             <label for="lastName" class="form__label">Last Name</label>
-            <input class="form__input" type="text" placeholder="Your last name" id="lastName" name="lastName">
+            <input class="form__input" type="text" placeholder="Your last name" id="lastName" name="lastName" value="<?php echo $user->lastName; ?>">
         </div> <!-- / .form__field -->
         <div class="form__field">
             <label for="email" class="form__label">Email</label>
-            <input class="form__input" type="email" placeholder="Your Email" id="email" name="email">
+            <input class="form__input" type="email" placeholder="Your Email" id="email" name="email" value="<?php echo $user->email; ?>">
         </div> <!-- / .form__field -->
         <div class="form__field">
             <label for="password" class="form__label">Password</label>
@@ -21,7 +25,7 @@
         </div> <!-- / .form__field -->
         <div class="form__field">
             <label for="password2" class="form__label">Confirm Password</label>
-            <input class="form__input" type="password" placeholder="Confirm Password" id="password2" name="password2">
+            <input class="form__input" type="password" placeholder="Confirm Password" id="password2" name="password2" >
         </div> <!-- / .form__field -->
 
         <input type="submit" class="form__submit" value="Create Account">

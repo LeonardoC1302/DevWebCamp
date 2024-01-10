@@ -26,8 +26,9 @@ class Email {
         $mail->Port = $_ENV['EMAIL_PORT'];
         $mail->Username = $_ENV['EMAIL_USER'];
         $mail->Password = $_ENV['EMAIL_PASS'];
-    
-        $mail->setFrom('accounts@devwebcamp.com');
+        $mail->SMTPSecure = 'ssl';
+        
+        $mail->setFrom($_ENV['EMAIL_USER'], 'accounts@devwebcamp.com');
         $mail->addAddress($this->email, $this->name);
         $mail->Subject = 'Confirm your account';
 
@@ -37,13 +38,11 @@ class Email {
 
         $content = '<html>';
         $content .= "<p><strong>Hello " . $this->name .  "</strong> Thanks for creating your account, please confirm your account by clicking the following link.</p>";
-        $content .= "<p>Click here: <a href='" . $_ENV['HOST'] . "/confirm?token=" . $this->token . "'>Confirm Cuenta</a>";       
+        $content .= "<p>Click here: <a href='" . $_ENV['HOST'] . "/confirm?token=" . $this->token . "'>Confirm Your Account</a>";       
         $content .= "<p>If you did not request this change, you can ignore the message</p>";
         $content .= '</html>';
         $mail->Body = $content;
-
         $mail->send();
-
     }
 
     public function sendInstructions() {

@@ -19,7 +19,7 @@ class AuthController {
             
             if(empty($alerts)) {
                 $user = user::where('email', $user->email);
-                if(!$user || !$user->confirmado ) {
+                if(!$user || !$user->confirmed ) {
                     user::setAlert('error', 'The user does not exist or is not confirmed');
                 } else {
                     if( password_verify($_POST['password'], $user->password) ) {
@@ -107,7 +107,7 @@ class AuthController {
             if(empty($alerts)) {
                 $user = user::where('email', $user->email);
 
-                if($user && $user->confirmado) {
+                if($user && $user->confirmed) {
                     $user->createToken();
                     unset($user->password2);
                     $user->save();
