@@ -2,7 +2,11 @@
     <h2 class="auth__heading"> <?php echo $title; ?> </h2>
     <p class="auth__text">Recover your access to WebDevCamp</p>
 
-    <form class="form">
+    <?php
+        include_once __DIR__ . '/../templates/alerts.php';
+    ?>
+
+    <form method="POST" action="/forgot" class="form">
         <div class="form__field">
             <label for="email" class="form__label">Email</label>
             <input class="form__input" type="email" placeholder="Your Email" id="email" name="email">

@@ -54,8 +54,9 @@ class Email {
         $mail->Port = $_ENV['EMAIL_PORT'];
         $mail->Username = $_ENV['EMAIL_USER'];
         $mail->Password = $_ENV['EMAIL_PASS'];
+        $mail->SMTPSecure = 'ssl';
     
-        $mail->setFrom('accounts@devwebcamp.com');
+        $mail->setFrom($_ENV['EMAIL_USER'], 'accounts@devwebcamp.com');
         $mail->addAddress($this->email, $this->name);
         $mail->Subject = 'Reset your password';
 

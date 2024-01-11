@@ -130,14 +130,14 @@ class AuthController {
 
         $token = s($_GET['token']);
 
-        $invalidToken = true;
+        $validToken = true;
 
         if(!$token) header('Location: /');
         $user = user::where('token', $token);
 
         if(empty($user)) {
             user::setAlert('error', 'Invalid Token, try again');
-            $invalidToken = false;
+            $validToken = false;
         }
 
 
@@ -151,7 +151,7 @@ class AuthController {
                 $result = $user->save();
 
                 if($result) {
-                    header('Location: /');
+                    header('Location: /login');
                 }
             }
         }
@@ -161,7 +161,7 @@ class AuthController {
         $router->render('auth/reset', [
             'title' => 'Reset Password',
             'alerts' => $alerts,
-            'invalidToken' => $invalidToken
+            'validToken' => $validToken
         ]);
     }
 
