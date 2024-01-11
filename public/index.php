@@ -4,6 +4,7 @@ require_once __DIR__ . '/../includes/app.php';
 
 use MVC\Router;
 use Controllers\AuthController;
+use Controllers\DashboardController;
 
 $router = new Router();
 
@@ -29,5 +30,7 @@ $router->post('/reset', [AuthController::class, 'reset']);
 $router->get('/message', [AuthController::class, 'message']);
 $router->get('/confirm', [AuthController::class, 'confirm']);
 
+// Dashboard
+$router->get('/admin/dashboard', [DashboardController::class, 'index']);
 
 $router->checkRoutes();
