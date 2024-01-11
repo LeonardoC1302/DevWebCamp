@@ -181,7 +181,7 @@ class AuthController {
         $user = user::where('token', $token);
 
         if(empty($user)) {
-            user::setAlert('error', 'Invalid Token');
+            user::setAlert('error', 'Invalid Token, account not confirmed');
         } else {
             $user->confirmed = 1;
             $user->token = '';

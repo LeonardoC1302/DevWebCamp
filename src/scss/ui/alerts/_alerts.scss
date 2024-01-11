@@ -13,8 +13,8 @@
         color: v.$red;
     }
     &--success{
-        background-color: lighten(v.$green, 60%);
+        background-color: lighten(v.$green, 40%);
         border-left: .5rem solid v.$green;
-        color: v.$green;
+        color: darken(v.$green, 20%);
     }
 }

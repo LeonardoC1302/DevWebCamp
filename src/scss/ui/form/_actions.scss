@@ -9,4 +9,8 @@
         font-size: 1.4rem;
         font-weight: v.$thin;
     }
+    &--center{
+        @extend .actions;
+        justify-content: center;
+    }
 }
