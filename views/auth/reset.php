@@ -3,7 +3,7 @@
     <p class="auth__text">Set a new password</p>
 
     <?php
-        include_once __DIR__ . '/../templates/alerts.php';
+        require_once __DIR__ . '/../templates/alerts.php';
     ?>
     <?php if($validToken) { ?>
         <form method="POST" class="form">

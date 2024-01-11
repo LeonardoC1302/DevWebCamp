@@ -3,7 +3,7 @@
     <p class="auth__text">Recover your access to WebDevCamp</p>
 
     <?php
-        include_once __DIR__ . '/../templates/alerts.php';
+        require_once __DIR__ . '/../templates/alerts.php';
     ?>
 
     <form method="POST" action="/forgot" class="form">

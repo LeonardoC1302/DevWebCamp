@@ -3,7 +3,7 @@
     <p class="auth__text">Your account has been successfully confirmed</p>
 
     <?php
-        include_once __DIR__ . '/../templates/alerts.php';
+        require_once __DIR__ . '/../templates/alerts.php';
     ?>
     <?php if(isset($alerts['success'])){ ?>
         <div class="actions--center">
