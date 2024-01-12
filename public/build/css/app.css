@@ -364,21 +364,55 @@ h3 {
   display: flex;
   flex-direction: column;
 }
+.form__fieldset {
+  border: none;
+  margin-top: 1rem;
+  padding: 0;
+}
+.form__legend {
+  color: #64748B;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
 .form__field {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin: 1.5rem 0;
 }
+.form__container-icon {
+  display: flex;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.form__icon {
+  background-color: #1E293B;
+  width: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form__icon i {
+  color: #FFFFFF;
+  font-size: 2rem;
+}
 .form__label {
   display: block;
   font-size: 1.8rem;
   color: rgba(26, 27, 21, 0.8);
 }
-.form__input {
+.form__input, .form__input--socials {
   padding: 1rem;
   border: 1px solid #b1c7dd;
   border-radius: 0.5rem;
+}
+.form__input--socials {
+  flex: 1;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form__input--file {
+  border: none;
 }
 .form__submit {
   background-color: #007df4;
@@ -398,6 +432,9 @@ h3 {
 .form__submit:hover {
   background-color: #0063c1;
   cursor: pointer;
+}
+.form__submit--register {
+  width: 100%;
 }
 
 .actions, .actions--center {
@@ -703,7 +740,7 @@ h3 {
     margin: 0;
   }
 }
-.dashboard__form {
+.dashboard__form-header {
   display: flex;
   justify-content: center;
 }
@@ -762,5 +799,46 @@ h3 {
   .dashboard__content {
     padding: 1rem 5rem 3rem 5rem;
   }
+}
+@media (min-width: 768px) {
+  .dashboard__container-button {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5rem;
+  }
+}
+.dashboard__button {
+  background-color: #007df4;
+  padding: 1.5rem 4rem;
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border: none;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+.dashboard__button:hover {
+  background-color: #0063c1;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .dashboard__button {
+    width: auto;
+  }
+}
+.dashboard__container, .dashboard__form {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  background-color: #FFFFFF;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.dashboard__form {
+  width: min(95%, 80rem);
+  margin: 0 auto;
 }
 /*# sourceMappingURL=app.css.map */

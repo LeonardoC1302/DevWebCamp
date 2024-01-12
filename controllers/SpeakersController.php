@@ -10,4 +10,13 @@ class SpeakersController {
             'title' => 'Speakers / Lecturers'
         ]);
     }
+
+    public static function create(Router $router) {
+        $alerts = [];
+
+        $router->render('admin/speakers/create', [
+            'title' => 'Register Speaker',
+            'alerts' => $alerts
+        ]);
+    }
 }

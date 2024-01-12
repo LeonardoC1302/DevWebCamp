@@ -4,11 +4,37 @@
 .form {
     display: flex;
     flex-direction: column;
+    &__fieldset{
+        border: none;
+        margin-top: 1rem;
+        padding: 0;
+    }
+    &__legend{
+        color: v.$gray;
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
     &__field{
         display: flex;
         flex-direction: column;
         gap:1rem;
         margin: 1.5rem 0;
+    }
+    &__container-icon{
+        display: flex;
+        border-radius: .5rem;
+        overflow: hidden;
+    }
+    &__icon{
+        background-color: v.$dark-gray;
+        width: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i{
+            color: v.$white;
+            font-size: 2rem;
+        }
     }
     &__label{
         display: block;
@@ -19,11 +45,24 @@
         padding: 1rem;
         border: 1px solid darken(v.$light-gray, 20);
         border-radius: .5rem;
+        &--socials{
+            @extend .form__input;
+            flex: 1;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        &--file{
+            border: none;
+        }
     }
 
     &__submit{
         @include m.button(v.$blue, v.$white);
         width: auto;
         align-self: flex-start;
+
+        &--register{
+            width: 100%;
+        }
     }
 }

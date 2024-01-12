@@ -27,7 +27,7 @@
     &__nav{
 
     }
-    &__form{
+    &__form-header{
         display: flex;
         justify-content: center;
     }
@@ -76,5 +76,33 @@
         @include m.tablet{
             padding: 1rem 5rem 3rem 5rem;
         }
+    }
+
+    &__container-button{
+        @include m.tablet{
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 5rem;
+        }
+    }
+    &__button{
+        @include m.button(v.$blue, v.$white);
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        @include m.tablet{
+            width: auto;
+        }
+    }
+
+    &__container{
+        @include m.shadow;
+        background-color: v.$white;
+        padding: 2rem;
+        border-radius: 1rem;
+    }
+
+    &__form{
+        @extend .dashboard__container;
+        @include m.md-container;
     }
 }
