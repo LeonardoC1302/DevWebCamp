@@ -5,6 +5,10 @@ require_once __DIR__ . '/../includes/app.php';
 use MVC\Router;
 use Controllers\AuthController;
 use Controllers\DashboardController;
+use Controllers\EventsController;
+use Controllers\GiftsController;
+use Controllers\SpeakersController;
+use Controllers\UsersController;
 
 $router = new Router();
 
@@ -33,4 +37,11 @@ $router->get('/confirm', [AuthController::class, 'confirm']);
 // Dashboard
 $router->get('/admin/dashboard', [DashboardController::class, 'index']);
 
+$router->get('/admin/speakers', [SpeakersController::class, 'index']);
+
+$router->get('/admin/events', [EventsController::class, 'index']);
+
+$router->get('/admin/users', [UsersController::class, 'index']);
+
+$router->get('/admin/gifts', [GiftsController::class, 'index']);
 $router->checkRoutes();
