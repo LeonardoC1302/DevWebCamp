@@ -149,3 +149,26 @@
 @mixin shadow{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
+
+@mixin reset-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@mixin tags{
+    @include reset-list;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+
+    > li{
+        background-color: v.$blue;
+        padding: 1rem;
+        border-radius: .5rem;
+        font-size: 1.4rem;
+        color: v.$white;
+        font-weight: v.$bold;
+    }
+}

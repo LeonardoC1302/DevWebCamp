@@ -13,7 +13,7 @@
 
     <div class="form__field">
         <label for="city" class="form__label">City</label>
-        <input class="form__input" type="text" id="city" name="city" placeholder="Speaker's City'" value="<?php echo $speaker->city ?? ''; ?>">
+        <input class="form__input" type="text" id="city" name="city" placeholder="Speaker's City" value="<?php echo $speaker->city ?? ''; ?>">
     </div> <!-- /field -->
 
     <div class="form__field">

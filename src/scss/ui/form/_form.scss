@@ -65,4 +65,8 @@
             width: 100%;
         }
     }
+
+    &__list{
+        @include m.tags;
+    }
 }
