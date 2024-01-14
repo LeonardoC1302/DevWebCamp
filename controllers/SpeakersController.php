@@ -8,8 +8,10 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class SpeakersController {
     public static function index(Router $router) {
+        $speakers = Speaker::all();
         $router->render('admin/speakers/index', [
-            'title' => 'Speakers / Lecturers'
+            'title' => 'Speakers / Lecturers',
+            'speakers' => $speakers
         ]);
     }
 
