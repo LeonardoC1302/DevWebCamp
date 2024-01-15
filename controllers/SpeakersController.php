@@ -120,4 +120,24 @@ class SpeakersController {
             'socials' => json_decode($speaker->socials)
         ]);
     }
+
+    public static function delete(Router $router){
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            $id = $_POST['id'];
+            $id = filter_var($id, FILTER_VALIDATE_INT);
+            $speaker = Speaker::find($id);
+            if(!isset($speaker)){
+                header('Location: /admin/speakers');
+            }
+            // DELETE SPEAKER IMAGE
+            $image_folder = '../public/img/speakers';
+            unlink($image_folder . '/' . $speaker->image . '.png');
+            unlink($image_folder . '/' . $speaker->image . '.webp');
+
+            $result = $speaker->delete();
+            if($result){
+                header('Location: /admin/speakers');
+            }
+        }
+    }
 }
