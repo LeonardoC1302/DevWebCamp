@@ -142,4 +142,17 @@ class ActiveRecord {
         $result = self::$db->query($query);
         return $result;
     }
+
+    public static function count() {
+        $query = "SELECT COUNT(*) FROM " . static::$table;
+        $result = self::$db->query($query);
+        $count = $result->fetch_array();
+        return array_shift($count);
+    }
+
+    public static function paginate($per_page, $offset){
+        $query = "SELECT * FROM " . static::$table . " ORDER BY id DESC LIMIT $per_page OFFSET $offset" ;
+        $result = self::querySQL($query);
+        return $result;
+    }
 }

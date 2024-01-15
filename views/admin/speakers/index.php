@@ -50,3 +50,5 @@
         <p class="text-center">No Speakers Registered Yet</p>
     <?php } ?>
 </div>
+
+<?php echo $pagination; ?>

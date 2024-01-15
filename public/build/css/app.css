@@ -906,4 +906,51 @@ h3 {
 .table__action:hover {
   cursor: pointer;
 }
+
+.pagination {
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .pagination {
+    justify-content: flex-end;
+  }
+}
+.pagination__link {
+  color: #007df4;
+  font-size: 1.6rem;
+}
+.pagination__link--text {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #007df4;
+}
+.pagination__link--text:hover {
+  background-color: #007df4;
+  color: #FFFFFF;
+}
+.pagination__link--number {
+  font-weight: 700;
+  display: none;
+}
+@media (min-width: 768px) {
+  .pagination__link--number {
+    display: inline;
+  }
+}
+.pagination__link--current {
+  color: #64748B;
+  font-weight: 700;
+  display: none;
+}
+@media (min-width: 768px) {
+  .pagination__link--current {
+    display: inline;
+  }
+}
 /*# sourceMappingURL=app.css.map */
