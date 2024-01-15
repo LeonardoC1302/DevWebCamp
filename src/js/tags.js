@@ -5,6 +5,11 @@
         const tagsDiv = document.querySelector('#tags');
         const tagsHiddenInput = document.querySelector('[name="tags"]');
         let tags = [];
+        if(tagsHiddenInput.value !== ''){
+            tags = tagsHiddenInput.value.split(',');
+            showTags();
+        }
+
         tagsInput.addEventListener('keypress', saveTag);
 
         function saveTag(e){

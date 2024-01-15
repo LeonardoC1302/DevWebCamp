@@ -43,6 +43,9 @@ $router->get('/admin/speakers', [SpeakersController::class, 'index']);
 $router->get('/admin/speakers/create', [SpeakersController::class, 'create']);
 $router->post('/admin/speakers/create', [SpeakersController::class, 'create']);
 
+$router->get('/admin/speakers/update', [SpeakersController::class, 'update']);
+$router->post('/admin/speakers/update', [SpeakersController::class, 'update']);
+
 $router->get('/admin/events', [EventsController::class, 'index']);
 
 $router->get('/admin/users', [UsersController::class, 'index']);

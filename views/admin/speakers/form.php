@@ -25,6 +25,18 @@
         <label for="image" class="form__label">Profile Picture</label>
         <input class="form__input form__input--file" type="file" id="image" name="image">
     </div> <!-- /field -->
+
+    <?php if(isset($speaker->currentImage)) { ?>
+        <p class="form__text">Current Profile Picture:</p>
+        <div class="form__image">
+            <picture>
+                <source srcset="<?php echo $_ENV['HOST'] . '/img/speakers/' . $speaker->image;?>.webp" type="image/webp">
+                <source srcset="<?php echo $_ENV['HOST'] . '/img/speakers/' . $speaker->image;?>.png" type="image/png">
+
+                <img src="<?php echo $_ENV['HOST'] . '/img/speakers/' . $speaker->image;?>.png" alt="Speaker Image">
+            </picture>
+        </div>
+    <?php } ?>
 </fieldset>
 
 <fieldset class="form__fieldset">
@@ -47,7 +59,7 @@
             <div class="form__icon">
                 <i class="fa-brands fa-facebook"></i>
             </div>
-            <input class="form__input--socials" type="text" name="socials[facebook]" placeholder="Facebook" value="<?php echo $speaker->facebook ?? ''; ?>">
+            <input class="form__input--socials" type="text" name="socials[facebook]" placeholder="Facebook" value="<?php echo $socials->facebook ?? ''; ?>">
         </div>
     </div> <!-- /field -->
 
@@ -56,7 +68,7 @@
             <div class="form__icon">
                 <i class="fa-brands fa-twitter"></i>
             </div>
-            <input class="form__input--socials" type="text" name="socials[twitter]" placeholder="Twitter" value="<?php echo $speaker->twitter ?? ''; ?>">
+            <input class="form__input--socials" type="text" name="socials[twitter]" placeholder="Twitter" value="<?php echo $socials->twitter ?? ''; ?>">
         </div>
     </div> <!-- /field -->
 
@@ -65,7 +77,7 @@
             <div class="form__icon">
                 <i class="fa-brands fa-youtube"></i>
             </div>
-            <input class="form__input--socials" type="text" name="socials[youtube]" placeholder="Youtube" value="<?php echo $speaker->youtube ?? ''; ?>">
+            <input class="form__input--socials" type="text" name="socials[youtube]" placeholder="Youtube" value="<?php echo $socials->youtube ?? ''; ?>">
         </div>
     </div> <!-- /field -->
 
@@ -74,7 +86,7 @@
             <div class="form__icon">
                 <i class="fa-brands fa-instagram"></i>
             </div>
-            <input class="form__input--socials" type="text" name="socials[instagram]" placeholder="Instagram" value="<?php echo $speaker->instagram ?? ''; ?>">
+            <input class="form__input--socials" type="text" name="socials[instagram]" placeholder="Instagram" value="<?php echo $socials->instagram ?? ''; ?>">
         </div>
     </div> <!-- /field -->
 
@@ -83,7 +95,7 @@
             <div class="form__icon">
                 <i class="fa-brands fa-tiktok"></i>
             </div>
-            <input class="form__input--socials" type="text" name="socials[tiktok]" placeholder="TikTok" value="<?php echo $speaker->tiktok ?? ''; ?>">
+            <input class="form__input--socials" type="text" name="socials[tiktok]" placeholder="TikTok" value="<?php echo $socials->tiktok ?? ''; ?>">
         </div>
     </div> <!-- /field -->
 
@@ -92,7 +104,7 @@
             <div class="form__icon">
                 <i class="fa-brands fa-github"></i>
             </div>
-            <input class="form__input--socials" type="text" name="socials[github]" placeholder="GitHub" value="<?php echo $speaker->github ?? ''; ?>">
+            <input class="form__input--socials" type="text" name="socials[github]" placeholder="GitHub" value="<?php echo $socials->github ?? ''; ?>">
         </div>
     </div> <!-- /field -->
 

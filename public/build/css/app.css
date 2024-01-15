@@ -436,6 +436,12 @@ h3 {
 .form__submit--register {
   width: 100%;
 }
+.form__text {
+  margin-top: 3rem;
+}
+.form__image {
+  max-width: 20rem;
+}
 .form__list {
   list-style: none;
   padding: 0;
