@@ -10,6 +10,7 @@ use Controllers\EventsController;
 use Controllers\GiftsController;
 use Controllers\SpeakersController;
 use Controllers\UsersController;
+use Controllers\APIEvents;
 
 $router = new Router();
 
@@ -49,6 +50,11 @@ $router->post('/admin/speakers/update', [SpeakersController::class, 'update']);
 $router->post('/admin/speakers/delete', [SpeakersController::class, 'delete']);
 
 $router->get('/admin/events', [EventsController::class, 'index']);
+
+$router->get('/admin/events/create', [EventsController::class, 'create']);
+$router->post('/admin/events/create', [EventsController::class, 'create']);
+
+$router->get('/api/events-schedule', [APIEvents::class, 'index']);
 
 $router->get('/admin/users', [UsersController::class, 'index']);
 

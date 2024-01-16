@@ -83,8 +83,8 @@ class ActiveRecord {
         return $result;
     }
 
-    public static function all() {
-        $query = "SELECT * FROM " . static::$table . " ORDER BY id DESC";
+    public static function all($order = 'DESC') {
+        $query = "SELECT * FROM " . static::$table . " ORDER BY id $order";
         $result = self::querySQL($query);
         return $result;
     }
@@ -105,6 +105,20 @@ class ActiveRecord {
         $query = "SELECT * FROM " . static::$table . " WHERE $column = '$value'";
         $result = self::querySQL($query);
         return array_shift( $result ) ;
+    }
+
+    public static function whereArray($array = []) {
+        $query = "SELECT * FROM " . static::$table . " WHERE ";
+        foreach($array as $key => $value) {
+            if($key  == array_key_last($array)){
+                $query .= "$key = '$value' ";
+            } else{
+                $query .= "$key = '$value' AND ";
+            }
+        }
+        // $query = substr($query, 0, -4);
+        $result = self::querySQL($query);
+        return $result;
     }
 
     public function create() {

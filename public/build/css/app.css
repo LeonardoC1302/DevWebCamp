@@ -401,18 +401,22 @@ h3 {
   font-size: 1.8rem;
   color: rgba(26, 27, 21, 0.8);
 }
-.form__input, .form__input--socials {
+.form__input, .form__input--socials, .form__select--socials, .form__select {
   padding: 1rem;
   border: 1px solid #b1c7dd;
   border-radius: 0.5rem;
 }
-.form__input--socials {
+.form__input--socials, .form__select--socials {
   flex: 1;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-.form__input--file {
+.form__input--file, .form__select--file {
   border: none;
+}
+.form__radio {
+  display: flex;
+  gap: 2rem;
 }
 .form__submit {
   background-color: #007df4;
@@ -472,6 +476,44 @@ h3 {
 }
 .actions--center {
   justify-content: center;
+}
+
+.hours {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 768px) {
+  .hours {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.hours__hour, .hours__hour--disabled, .hours__hour--selected {
+  color: #007df4;
+  border: 1px solid #007df4;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+.hours__hour:hover, .hours__hour--disabled:hover, .hours__hour--selected:hover {
+  cursor: pointer;
+}
+.hours__hour--selected {
+  background-color: #007df4;
+  color: #FFFFFF;
+}
+.hours__hour--disabled {
+  border: 1px solid #64748B;
+  color: #64748B;
+  opacity: 0.5;
+}
+.hours__hour--disabled:hover {
+  cursor: not-allowed;
 }
 
 .header {
