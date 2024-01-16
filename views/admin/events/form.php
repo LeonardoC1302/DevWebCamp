@@ -26,12 +26,12 @@
         <div class="form__radio">
             <?php foreach ($days as $day): ?>
                 <div>
-                    <input type="radio" id="<?php strtolower($day->name);?>" name="day" value="<?php echo $day->id; ?>">
+                    <input type="radio" id="<?php strtolower($day->name);?>" name="day" value="<?php echo $day->id; ?>" <?php echo ($event->dayId ===$day->id) ? 'checked' : ''; ?>>
                     <label for="<?php strtolower($day->name);?>"><?php echo $day->name; ?></label>
                 </div>
             <?php endforeach; ?>
         </div>
-        <input type="hidden" name="dayId" value="">
+        <input type="hidden" name="dayId" value="<?php echo $event->dayId; ?>">
     </div> <!-- /field -->
 
     <div id="hours" class="form__field">
@@ -42,7 +42,7 @@
                 <li data-hourId="<?php echo $hour->id; ?>" class="hours__hour hours__hour--disabled"><?php echo $hour->hour; ?></li>
             <?php endforeach; ?>
         </ul>
-        <input type="hidden" name="hourId" value="">
+        <input type="hidden" name="hourId" value="<?php echo $event->hourId; ?>">
     </div> <!-- /field -->
 
 </fieldset>
@@ -54,7 +54,7 @@
         <label for="speakers" class="form__label">Speaker</label>
         <input class="form__input" type="text" id="speakers" placeholder="Search Speaker">
         <ul class="speakers-list" id="speakers-list"></ul>
-        <input type="hidden" name="speakerId" value="">
+        <input type="hidden" name="speakerId" value="<?php echo $event->speakerId; ?>">
     </div> <!-- /field -->
 
     <div class="form__field">

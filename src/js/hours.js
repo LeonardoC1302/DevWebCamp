@@ -2,12 +2,6 @@
     const hours = document.querySelector('#hours');
 
     if(hours){
-
-        let search = {
-            categoryId: '',
-            day: ''
-        }
-
         const categoryId = document.querySelector('[name="categoryId"]');
         const days = document.querySelectorAll('[name="day"]');
         const hiddenDayInput = document.querySelector('[name="dayId"]');
@@ -15,6 +9,24 @@
         
         categoryId.addEventListener('change', searchTerm);
         days.forEach(day => day.addEventListener('change', searchTerm))
+
+        let search = {
+            categoryId: +categoryId.value || '',
+            day: +hiddenDayInput.value || ''
+        }
+
+        if(!Object.values(search).includes('')){
+            (async() => {
+                await searchEvents();
+                const selectedHour = document.querySelector(`[data-hourid="${hiddenHourInput.value}"]`);
+    
+                selectedHour.classList.remove('hours__hour--disabled');
+                selectedHour.classList.add('hours__hour--selected');
+
+                selectedHour.onclick = selectHour;
+            })();
+        }
+
 
         function searchTerm(e){
             search[e.target.name] = e.target.value;

@@ -9,8 +9,20 @@
         const hiddenSpeaker = document.querySelector('[name="speakerId"]');
 
         getSpeakers();
-
         speakerInput.addEventListener('input', searchSpeaker);
+
+        if(hiddenSpeaker.value){
+            (async() => {
+                const speaker = await getSpeaker(hiddenSpeaker.value);
+                const {name, lastName} = speaker;
+                
+                const speakerHTML = document.createElement('li');
+                speakerHTML.classList.add('speakers-list__speaker', 'speakers-list__speaker--selected');
+                speakerHTML.textContent = `${name.trim()} ${lastName.trim()}`;
+
+                listSpeakers.appendChild(speakerHTML);
+            })();
+        }
 
         async function getSpeakers() {
             const url = `/api/speakers`;
@@ -19,6 +31,14 @@
             const result = await response.json();
 
             formatSpeakers(result);
+        }
+
+        async function getSpeaker(id){
+            const url = `/api/speaker?id=${id}`;
+            const response = await fetch(url);
+            const result = await response.json();
+
+            return result;
         }
 
         function formatSpeakers(arraySpeakers = []){

@@ -153,9 +153,6 @@ class SpeakersController {
     }
 
     public static function delete(Router $router){
-        if(!isAdmin()){
-            header('Location: /');
-        }
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             if(!isAdmin()){
                 header('Location: /');
