@@ -1,0 +1,23 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.speakers-list {
+    @include m.reset-list;
+    @include m.grid(1, 1rem);
+
+    &__speaker{
+        color: v.$blue;
+        border: 1px solid v.$blue;
+        padding: 1rem;
+        border-radius: 1rem;
+        text-align: center;
+        &--selected{
+            @extend .speakers-list__speaker;
+            background-color: v.$blue;
+            color: v.$white;
+        }
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}

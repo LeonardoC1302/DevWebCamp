@@ -53,6 +53,8 @@
     <div class="form__field">
         <label for="speakers" class="form__label">Speaker</label>
         <input class="form__input" type="text" id="speakers" placeholder="Search Speaker">
+        <ul class="speakers-list" id="speakers-list"></ul>
+        <input type="hidden" name="speakerId" value="">
     </div> <!-- /field -->
 
     <div class="form__field">

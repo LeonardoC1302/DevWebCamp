@@ -995,4 +995,27 @@ h3 {
     display: inline;
   }
 }
+
+.speakers-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+.speakers-list__speaker, .speakers-list__speaker--selected {
+  color: #007df4;
+  border: 1px solid #007df4;
+  padding: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+.speakers-list__speaker--selected {
+  background-color: #007df4;
+  color: #FFFFFF;
+}
+.speakers-list__speaker:hover, .speakers-list__speaker--selected:hover {
+  cursor: pointer;
+}
 /*# sourceMappingURL=app.css.map */

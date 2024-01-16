@@ -11,6 +11,7 @@ use Controllers\GiftsController;
 use Controllers\SpeakersController;
 use Controllers\UsersController;
 use Controllers\APIEvents;
+use Controllers\APISpeakers;
 
 $router = new Router();
 
@@ -55,6 +56,8 @@ $router->get('/admin/events/create', [EventsController::class, 'create']);
 $router->post('/admin/events/create', [EventsController::class, 'create']);
 
 $router->get('/api/events-schedule', [APIEvents::class, 'index']);
+
+$router->get('/api/speakers', [APISpeakers::class, 'index']);
 
 $router->get('/admin/users', [UsersController::class, 'index']);
 
