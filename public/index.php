@@ -12,6 +12,7 @@ use Controllers\SpeakersController;
 use Controllers\UsersController;
 use Controllers\APIEvents;
 use Controllers\APISpeakers;
+use Controllers\PagesController;
 
 $router = new Router();
 
@@ -68,4 +69,11 @@ $router->get('/api/speaker', [APISpeakers::class, 'speaker']);
 $router->get('/admin/users', [UsersController::class, 'index']);
 
 $router->get('/admin/gifts', [GiftsController::class, 'index']);
+
+// Public Routes
+$router->get('/', [PagesController::class, 'index']);
+$router->get('/devwebcamp', [PagesController::class, 'event']);
+$router->get('/packages', [PagesController::class, 'packages']);
+$router->get('/workshops-conferences', [PagesController::class, 'conferences']);
+
 $router->checkRoutes();

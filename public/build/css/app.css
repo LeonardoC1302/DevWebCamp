@@ -355,9 +355,156 @@ h3 {
   text-align: center;
 }
 
+[class$=__description] {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #1E293B;
+  margin-bottom: 5rem;
+}
+
 .auth {
   width: min(95%, 60rem);
   margin: 0 auto;
+}
+
+.devwebcamp__grid {
+  width: min(95%, 140rem);
+  margin: 0 auto;
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 768px) {
+  .devwebcamp__grid {
+    display: grid;
+    gap: 5rem;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+}
+.devwebcamp__text {
+  line-height: 2;
+}
+
+.packages__grid {
+  width: min(95%, 140rem);
+  margin: 0 auto;
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 768px) {
+  .packages__grid {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: flex-start;
+  }
+}
+
+.package {
+  border: 1px solid #7f8ea3;
+  padding: 3rem;
+}
+.package__name {
+  font-weight: 900;
+  font-size: 2.6rem;
+  margin: 2rem 0;
+}
+.package:nth-child(2) {
+  order: -1;
+}
+@media (min-width: 768px) {
+  .package:nth-child(2) {
+    order: unset;
+  }
+}
+.package__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 2;
+}
+.package__price {
+  font-size: 6rem;
+  margin: 3rem 0 0 0;
+  color: #007df4;
+  font-weight: 900;
+  text-align: center;
+}
+
+.schedule {
+  padding: 5rem 0;
+  width: min(95%, 140rem);
+  margin: 0 auto;
+}
+
+.events__heading {
+  color: #007df4;
+  margin: 5rem 0;
+  text-align: left;
+  font-size: clamp(2rem, -0.8rem + 8vw, 6rem);
+}
+.events__date {
+  color: #64748B;
+  margin: 3rem 0 1rem 0;
+}
+.events--workshops .events__heading {
+  color: #00c8c2;
+}
+.events--workshops .event__info {
+  background-color: #00c8c2;
+}
+.events--workshops .event__info:hover {
+  background-color: #009591;
+}
+.events .swiper-button-next,
+.events .swiper-button-prev {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.event__name {
+  font-size: 2.4rem;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.event__hour {
+  font-weight: 700;
+}
+.event__info {
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: #007df4;
+  color: #FFFFFF;
+  transition: 20ms background-color ease;
+}
+.event__info:hover {
+  background-color: #0063c1;
+}
+.event__introduction {
+  font-size: 1.6rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.event__author-info {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.event__author-image {
+  width: 5rem;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+}
+.event__author-name {
+  font-weight: 700;
 }
 
 .form {
@@ -538,16 +685,19 @@ h3 {
     justify-content: flex-end;
   }
 }
-.header__link {
+.header__link, .header__submit {
   all: unset;
   color: #FFFFFF;
   font-size: 1.4rem;
   text-transform: uppercase;
   font-weight: 700;
 }
-.header__link:hover {
+.header__link:hover, .header__submit:hover {
   color: #007df4;
   cursor: pointer;
+}
+.header__form {
+  display: flex;
 }
 .header__content {
   padding-top: 10rem;
@@ -631,6 +781,7 @@ h3 {
   color: #FFFFFF;
   text-align: center;
   margin-bottom: 2rem;
+  white-space: nowrap;
   font-size: clamp(2rem, -0.8rem + 10vw, 3rem);
 }
 @media (min-width: 1024px) {
@@ -651,11 +802,15 @@ h3 {
 }
 .navigation__link {
   color: #FFFFFF;
-  font-size: 2.2rem;
+  font-size: 2rem;
   padding: 2rem;
   font-weight: 900;
   text-transform: uppercase;
   text-align: center;
+}
+.navigation__link--current {
+  background-color: #FFFFFF;
+  color: #007df4;
 }
 .navigation__link:hover {
   background-color: #FFFFFF;
@@ -683,6 +838,7 @@ h3 {
   color: #FFFFFF;
   text-align: center;
   margin-bottom: 2rem;
+  white-space: nowrap;
   font-size: clamp(2rem, -0.8rem + 10vw, 4rem);
 }
 @media (min-width: 1024px) {
@@ -797,6 +953,7 @@ h3 {
   color: #FFFFFF;
   text-align: center;
   margin-bottom: 2rem;
+  white-space: nowrap;
   font-size: clamp(2rem, -0.8rem + 10vw, 3rem);
 }
 @media (min-width: 1024px) {

@@ -9,11 +9,15 @@
     }
     &__link{
         color: v.$white;
-        font-size: 2.2rem;
+        font-size: 2rem;
         padding: 2rem;
         font-weight: v.$black-font;
         text-transform: uppercase;
         text-align: center;
+        &--current{
+            background-color: v.$white;
+            color: v.$blue;
+        }
         &:hover{
             background-color: v.$white;
             color: v.$blue;

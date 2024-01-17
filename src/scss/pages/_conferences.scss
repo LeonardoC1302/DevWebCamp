@@ -1,0 +1,85 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.schedule{
+    padding: 5rem 0;
+    @include m.container;
+}
+
+.events{
+    $modifier: &;
+    &__heading{
+        color: v.$blue;
+        margin: 5rem 0;
+        text-align: left;
+        font-size: clamp(2rem, -0.8rem + 8vw, 6rem);
+    }
+
+    &__date{
+        color: v.$gray;
+        margin: 3rem 0 1rem 0;
+    }
+
+    &--workshops{
+        #{$modifier}__heading{
+            color: v.$secondary;
+        }
+        .event__info{
+            background-color: v.$secondary;
+            &:hover{
+                background-color: darken(v.$secondary, 10%);
+            }
+        }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev{
+        color: rgba(v.$white, 0.5);
+    }
+}
+
+.event{
+    &__name{
+        font-size: 2.4rem;
+        margin: 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    &__hour{
+        font-weight: v.$bold;
+    }
+    &__info{
+        padding: 2rem;
+        border-radius: 1rem;
+        background-color: v.$blue;
+        color: v.$white;
+        transition: 20ms background-color ease;
+
+        &:hover{
+            background-color: darken(v.$blue, 10%);
+        }
+    }
+    &__introduction{
+        font-size: 1.6rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    &__author-info{
+        display: flex;
+        gap: 2rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__author-image{
+        width: 5rem;
+        background-color: v.$white;
+        border-radius: 50%;
+    }
+    &__author-name{
+        font-weight: v.$bold;
+    }
+}
