@@ -91,4 +91,10 @@ class PagesController{
             'events' => $formattedEvents
         ]); 
     }
+
+    public static function error(Router $router){
+        $router->render('pages/error', [
+            'title' => 'Page Not Found'
+        ]); 
+    }
 }

@@ -768,6 +768,13 @@ h3 {
   cursor: pointer;
 }
 
+.page_404__container {
+  text-align: center;
+}
+.page_404__link {
+  color: #007df4;
+}
+
 .form {
   display: flex;
   flex-direction: column;
