@@ -11,8 +11,39 @@ use MVC\Router;
 
 class PagesController{
     public static function index(Router $router){
+        $events = Event::order('hourId', 'ASC');
+        
+        $formattedEvents = [];
+        foreach($events as $event){
+            $event->category = Category::find($event->categoryId);
+            $event->day = Day::find($event->dayId);
+            $event->hour = Hour::find($event->hourId);
+            $event->speaker = Speaker::find($event->speakerId);
+
+            if($event->dayId === "1" && $event->categoryId === "1"){
+                $formattedEvents['conferences_f'][] = $event;
+            }
+            if($event->dayId === "2" && $event->categoryId === "1"){
+                $formattedEvents['conferences_s'][] = $event;
+            }
+            if($event->dayId === "1" && $event->categoryId === "2"){
+                $formattedEvents['workshops_f'][] = $event;
+            }
+            if($event->dayId === "2" && $event->categoryId === "2"){
+                $formattedEvents['workshops_s'][] = $event;
+            }
+        }
+
+        $speakers = Speaker::count();
+        $conferences = Event::count('categoryId', '1');
+        $workshops = Event::count('categoryId', '2');
+        
         $router->render('pages/index', [
-            'title' => 'Home'
+            'title' => 'Home',
+            'events' => $formattedEvents,
+            'speakers' => $speakers,
+            'conferences' => $conferences,
+            'workshops' => $workshops
         ]); 
     }
 

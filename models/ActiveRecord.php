@@ -163,8 +163,11 @@ class ActiveRecord {
         return $result;
     }
 
-    public static function count() {
+    public static function count($column = '', $value = '') {
         $query = "SELECT COUNT(*) FROM " . static::$table;
+        if($column && $value){
+            $query .= " WHERE $column = '$value'";
+        }
         $result = self::$db->query($query);
         $count = $result->fetch_array();
         return array_shift($count);
