@@ -16,6 +16,26 @@
 
 .speaker{
     @include m.card;
+    @for $i from 1 through 4{
+        &:nth-child(4n+#{$i}){
+            background-image: image-set(
+                url('../img/bg_#{$i}.avif') 1x,
+                url('../img/bg_#{$i}.webp') 1x,
+                url('../img/bg_#{$i}.png') 1x
+            );
+            background-position: center top;
+            background-size: 35rem;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__image{
+        min-width: 35rem;
+        @include m.tablet{
+            min-width: unset;
+        }
+    }
+    
     &__location{
         color: v.$gray;
         margin: 1rem 0;
