@@ -34,16 +34,19 @@ class PagesController{
             }
         }
 
-        $speakers = Speaker::count();
+        $totalSpeakers = Speaker::count();
         $conferences = Event::count('categoryId', '1');
         $workshops = Event::count('categoryId', '2');
+
+        $speakers = Speaker::all();
         
         $router->render('pages/index', [
             'title' => 'Home',
             'events' => $formattedEvents,
-            'speakers' => $speakers,
+            'totalSpeakers' => $totalSpeakers,
             'conferences' => $conferences,
-            'workshops' => $workshops
+            'workshops' => $workshops,
+            'speakers' => $speakers
         ]); 
     }
 

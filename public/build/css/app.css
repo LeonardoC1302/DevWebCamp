@@ -543,6 +543,97 @@ h3 {
   font-size: 8rem;
 }
 
+.speakers__grid {
+  width: min(95%, 140rem);
+  margin: 0 auto;
+  display: grid;
+  gap: 5rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 768px) {
+  .speakers__grid {
+    display: grid;
+    gap: 5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .speakers__grid {
+    display: grid;
+    gap: 5rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.speaker {
+  border: 1px solid #7f8ea3;
+  padding: 3rem;
+}
+.speaker__name {
+  font-weight: 900;
+  font-size: 2.6rem;
+  margin: 2rem 0;
+}
+.speaker__location {
+  color: #64748B;
+  margin: 1rem 0;
+  font-size: 2rem;
+  line-height: 1.5;
+}
+.speaker__skills {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.speaker__skills > li {
+  background-color: #007df4;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.4rem;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.speaker-socials {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.speaker-socials__link::before {
+  color: #1a1b15;
+  font-size: 3rem;
+  display: inline-block;
+  font-style: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 6 Brands";
+}
+.speaker-socials__link[href*="facebook.com"]::before {
+  content: "\f39e";
+}
+.speaker-socials__link[href*="github.com"]::before {
+  content: "\f09b";
+}
+.speaker-socials__link[href*="tiktok.com"]::before {
+  content: "\e07b";
+}
+.speaker-socials__link[href*="instagram.com"]::before {
+  content: "\f16d";
+}
+.speaker-socials__link[href*="youtube.com"]::before {
+  content: "\f167";
+}
+.speaker-socials__link[href*="twitter.com"]::before {
+  content: "\f099";
+}
+.speaker-socials__hide {
+  display: none;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -919,22 +1010,22 @@ h3 {
   -webkit-font-smoothing: antialiased;
   font-family: "Font Awesome 6 Brands";
 }
-.socials__link[href*="https://facebook.com"]::before {
+.socials__link[href*="facebook.com"]::before {
   content: "\f39e";
 }
-.socials__link[href*="https://github.com"]::before {
+.socials__link[href*="github.com"]::before {
   content: "\f09b";
 }
-.socials__link[href*="https://tiktok.com"]::before {
+.socials__link[href*="tiktok.com"]::before {
   content: "\e07b";
 }
-.socials__link[href*="https://instagram.com"]::before {
+.socials__link[href*="instagram.com"]::before {
   content: "\f16d";
 }
-.socials__link[href*="https://youtube.com"]::before {
+.socials__link[href*="youtube.com"]::before {
   content: "\f167";
 }
-.socials__link[href*="https://twitter.com"]::before {
+.socials__link[href*="twitter.com"]::before {
   content: "\f099";
 }
 .socials__hide {
