@@ -4,22 +4,22 @@
 
 <section class="summary">
     <div class="summary__grid">
-        <div class="summary__block">
+        <div <?php animations(); ?> class="summary__block">
             <p class="summary__text summary__text--number"><?php echo $totalSpeakers; ?></p>
             <p class="summary__text">Speakers</p>
         </div> <!-- .summary__block -->
 
-        <div class="summary__block">
+        <div <?php animations(); ?> class="summary__block">
             <p class="summary__text summary__text--number"><?php echo $conferences; ?></p>
             <p class="summary__text">Conferences</p>
         </div> <!-- .summary__block -->
 
-        <div class="summary__block">
+        <div <?php animations(); ?> class="summary__block">
             <p class="summary__text summary__text--number"><?php echo $workshops; ?></p>
             <p class="summary__text">Workshops</p>
         </div> <!-- .summary__block -->
 
-        <div class="summary__block">
+        <div <?php animations(); ?> class="summary__block">
             <p class="summary__text summary__text--number">500</p>
             <p class="summary__text">Assistants</p>
         </div> <!-- .summary__block -->
@@ -32,7 +32,7 @@
 
     <div class="speakers__grid">
         <?php foreach($speakers as $speaker) { ?>
-            <div class="speaker">
+            <div <?php animations(); ?> class="speaker">
                 <picture>
                     <source srcset="img/speakers/<?php echo $speaker->image;?>.webp" type="image/webp">
                     <source srcset="img/speakers/<?php echo $speaker->image;?>.png" type="image/png">
@@ -96,6 +96,33 @@
     </div>
 </section>
 
-<div id="map" class="map">
+<div id="map" class="map"></div>
 
-</div>
+<section class="tickets">
+    <h2 class="tickets__heading">Tickets & Prices</h2>
+    <p class="tickets__description">Prices for DevWebCamp</p>
+
+    <div class="tickets__grid">
+        <div <?php animations(); ?> class="ticket ticket--onperson">
+            <h4 class="ticket__logo">&#60;DevWebCamp /></h4>
+            <p class="ticket__plan">On-Person</p>
+            <p class="ticket__price">$199</p>
+        </div> <!-- .ticket -->
+
+        <div <?php animations(); ?> class="ticket ticket--virtual">
+            <h4 class="ticket__logo">&#60;DevWebCamp /></h4>
+            <p class="ticket__plan">Virtual</p>
+            <p class="ticket__price">$49</p>
+        </div> <!-- .ticket -->
+
+        <div <?php animations(); ?> class="ticket ticket--free">
+            <h4 class="ticket__logo">&#60;DevWebCamp /></h4>
+            <p class="ticket__plan">Free</p>
+            <p class="ticket__price">Free - $0</p>
+        </div> <!-- .ticket -->
+    </div>
+
+    <div class="ticket__link-container">
+        <a href="/packages" class="ticket__link">See Packages</a>
+    </div>
+</section>

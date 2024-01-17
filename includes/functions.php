@@ -28,3 +28,9 @@ function isAdmin() : bool {
     }
     return isset($_SESSION['admin']) && !empty($_SESSION['admin']);
 }
+
+function animations() : void{
+    $effects = ['fade-up', 'fade-down', 'fade-right', 'fade-left', 'flip-left', 'flip-right', 'zoom-in', 'zoom-in-up', 'zoom-in-down', 'zoom-out'];
+    $effect = array_rand($effects, 1);
+    echo ' data-aos="' . $effects[$effect] . '" ';
+}
