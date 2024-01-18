@@ -12,9 +12,9 @@
         </div>
 
         <div class="package">
-            <h3 class="package__name">On-Person Pass</h3>
+            <h3 class="package__name">In-Person Pass</h3>
             <ul class="package__list">
-                <li class="package__element">On-Person Access to DevWebCamp</li>
+                <li class="package__element">In-Person Access to DevWebCamp</li>
                 <li class="package__element">2 Day Pass</li>
                 <li class="package__element">Access to Workshops and Conferences</li>
                 <li class="package__element">Access to Event Recordings</li>

@@ -13,6 +13,7 @@ use Controllers\UsersController;
 use Controllers\APIEvents;
 use Controllers\APISpeakers;
 use Controllers\PagesController;
+use Controllers\RegisterController;
 
 $router = new Router();
 
@@ -69,6 +70,13 @@ $router->get('/api/speaker', [APISpeakers::class, 'speaker']);
 $router->get('/admin/users', [UsersController::class, 'index']);
 
 $router->get('/admin/gifts', [GiftsController::class, 'index']);
+
+// Register User
+$router->get('/finish-registration', [RegisterController::class, 'create']);
+$router->post('/finish-registration/free', [RegisterController::class, 'free']);
+$router->post('/finish-registration/pay', [RegisterController::class, 'pay']);
+
+$router->get('/ticket', [RegisterController::class, 'ticket']);
 
 // Public Routes
 $router->get('/', [PagesController::class, 'index']);

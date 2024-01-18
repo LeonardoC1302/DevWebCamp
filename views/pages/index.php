@@ -105,7 +105,7 @@
     <div class="tickets__grid">
         <div <?php animations(); ?> class="ticket ticket--onperson">
             <h4 class="ticket__logo">&#60;DevWebCamp /></h4>
-            <p class="ticket__plan">On-Person</p>
+            <p class="ticket__plan">In-Person</p>
             <p class="ticket__price">$199</p>
         </div> <!-- .ticket -->
 
