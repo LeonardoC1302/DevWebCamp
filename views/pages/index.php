@@ -103,7 +103,7 @@
     <p class="tickets__description">Prices for DevWebCamp</p>
 
     <div class="tickets__grid">
-        <div <?php animations(); ?> class="ticket ticket--onperson">
+        <div <?php animations(); ?> class="ticket ticket--in-person">
             <h4 class="ticket__logo">&#60;DevWebCamp /></h4>
             <p class="ticket__plan">In-Person</p>
             <p class="ticket__price">$199</p>

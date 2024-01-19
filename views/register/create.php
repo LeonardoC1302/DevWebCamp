@@ -27,10 +27,10 @@
             </ul>
             <p class="package__price">$199</p>
             <div id="smart-button-container">
-                <div style="text-align: center;">
+              <div style="text-align: center;">
                 <div id="paypal-button-container"></div>
+              </div>
             </div>
-</div>
         </div>
 
         <div class="package">
@@ -42,6 +42,11 @@
                 <li class="package__element">Access to Event Recordings</li>
             </ul>
             <p class="package__price">$49</p>
+            <div id="smart-button-container">
+              <div style="text-align: center;">
+                <div id="paypal-button-container-virtual"></div>
+              </div>
+            </div>
         </div>
     </div>
 </main>
@@ -87,6 +92,45 @@
           console.log(err);
         }
       }).render('#paypal-button-container');
+
+      // VIRTUAL PASS
+      paypal.Buttons({
+        style: {
+          shape: 'rect',
+          color: 'blue',
+          layout: 'vertical',
+          label: 'pay',
+        },
+ 
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{"description":"2","amount":{"currency_code":"USD","value":49}}]
+          });
+        },
+ 
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(orderData) {
+            const data = new FormData();
+            data.append('packageId', orderData.purchase_units[0].description);
+            data.append('paymentId', orderData.purchase_units[0].payments.captures[0].id);
+            
+            fetch('/finish-registration/pay',{
+                method: 'POST',
+                body: data
+            })
+            .then(answer => answer.json())
+            .then(result => {
+                if(result.result){
+                    actions.redirect('http://localhost:3000/finish-registration/conferences');
+                }
+            })
+          });
+        },
+ 
+        onError: function(err) {
+          console.log(err);
+        }
+      }).render('#paypal-button-container-virtual');
     }
  
   initPayPalButton();

@@ -76,6 +76,9 @@ $router->get('/finish-registration', [RegisterController::class, 'create']);
 $router->post('/finish-registration/free', [RegisterController::class, 'free']);
 $router->post('/finish-registration/pay', [RegisterController::class, 'pay']);
 
+$router->get('/finish-registration/conferences', [RegisterController::class, 'conferences']);
+$router->post('/finish-registration/conferences', [RegisterController::class, 'conferences']);
+
 $router->get('/ticket', [RegisterController::class, 'ticket']);
 
 // Public Routes

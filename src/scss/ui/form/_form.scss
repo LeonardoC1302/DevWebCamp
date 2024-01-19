@@ -67,7 +67,8 @@
         width: auto;
         align-self: flex-start;
 
-        &--register{
+        &--register,
+        &--full{
             width: 100%;
         }
     }

@@ -325,6 +325,10 @@ img {
   height: auto;
 }
 
+.swal2-popup {
+  font-size: 2rem !important;
+}
+
 h1, h2, h3 {
   font-family: "Outfit", sans-serif;
   font-weight: 900;
@@ -523,6 +527,28 @@ h3 {
 }
 .event__author-name {
   font-weight: 700;
+}
+.event__add {
+  background-color: #FFFFFF;
+  padding: 1.5rem 4rem;
+  color: #1a1b15;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border: none;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  margin-top: 1rem;
+}
+.event__add:hover {
+  background-color: #e6e6e6;
+  cursor: pointer;
+}
+.event__add:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .summary {
@@ -729,7 +755,7 @@ h3 {
   clip-path: circle(50% at 75% 50%);
   right: 0;
 }
-.ticket--onperson {
+.ticket--in-person {
   background-color: hsl(178, 100%, 39%);
   background-image: radial-gradient(at 93% 6%, hsl(209, 100%, 47%) 0px, transparent 50%), radial-gradient(at 29% 8%, hsl(178, 100%, 39%) 0px, transparent 50%), radial-gradient(at 60% 35%, hsl(209, 100%, 47%) 0px, transparent 50%), radial-gradient(at 94% 92%, hsl(178, 100%, 39%) 0px, transparent 50%), radial-gradient(at 0% 99%, hsl(209, 100%, 47%) 0px, transparent 50%), radial-gradient(at 10% 30%, hsl(178, 100%, 39%) 0px, transparent 50%), radial-gradient(at 40% 67%, hsl(209, 100%, 47%) 0px, transparent 50%);
 }
@@ -938,7 +964,7 @@ h3 {
   background-color: #0063c1;
   cursor: pointer;
 }
-.form__submit--register {
+.form__submit--register, .form__submit--full {
   width: 100%;
 }
 .form__text {
@@ -1528,5 +1554,105 @@ h3 {
 }
 .speakers-list__speaker:hover, .speakers-list__speaker--selected:hover {
   cursor: pointer;
+}
+
+.register-events {
+  width: min(95%, 140rem);
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .register-events {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .register-events__list {
+    flex: 0 0 60%;
+  }
+}
+.register-events__grid {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 768px) {
+  .register-events__grid {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.register-events__heading--conferences, .register-events__heading--workshops {
+  font-size: clamp(2rem, -0.8rem + 10vw, 5rem);
+  white-space: nowrap;
+}
+.register-events__heading--conferences {
+  color: #007df4;
+}
+.register-events__heading--workshops {
+  color: #00c8c2;
+  margin-top: 5rem;
+}
+.register-events__date {
+  margin: 6rem 0 3rem 0;
+}
+
+.register {
+  background-color: #F8FAFC;
+  padding: 3rem;
+  border-radius: 1rem;
+}
+@media (min-width: 768px) {
+  .register {
+    flex: 0 0 40%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 3rem;
+  }
+}
+.register__heading {
+  margin: 0 0 3rem 0;
+}
+.register__event {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.register__event:nth-child(even) {
+  background-color: #edf2f7;
+}
+.register__name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+.register__delete {
+  all: unset;
+  color: rgb(169, 0, 0);
+}
+.register__delete:hover {
+  cursor: pointer;
+}
+.register__text {
+  text-align: center;
+}
+.register__gift {
+  margin-top: 3rem;
+}
+.register__label {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.register__select {
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid #64748B;
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
 /*# sourceMappingURL=app.css.map */
