@@ -96,9 +96,9 @@ class ActiveRecord {
     }
 
     public static function get($limit) {
-        $query = "SELECT * FROM " . static::$table . " LIMIT $limit ORDER BY id DESC" ;
+        $query = "SELECT * FROM " . static::$table . " ORDER BY id DESC LIMIT $limit" ;
         $result = self::querySQL($query);
-        return array_shift( $result ) ;
+        return $result;
     }
 
     public static function where($column, $value) {
@@ -109,6 +109,12 @@ class ActiveRecord {
 
     public static function order($column, $order){
         $query = "SELECT * FROM " . static::$table . " ORDER BY $column $order";
+        $result = self::querySQL($query);
+        return $result;
+    }
+
+    public static function orderLimit($column, $order, $limit){
+        $query = "SELECT * FROM " . static::$table . " ORDER BY $column $order LIMIT $limit";
         $result = self::querySQL($query);
         return $result;
     }
@@ -168,6 +174,20 @@ class ActiveRecord {
         $query = "SELECT COUNT(*) FROM " . static::$table;
         if($column && $value){
             $query .= " WHERE $column = '$value'";
+        }
+        $result = self::$db->query($query);
+        $count = $result->fetch_array();
+        return array_shift($count);
+    }
+
+    public static function totalArray($array = []) {
+        $query = "SELECT COUNT(*) FROM " . static::$table . " WHERE ";
+        foreach($array as $key => $value) {
+            if($key  == array_key_last($array)){
+                $query .= "$key = '$value' ";
+            } else{
+                $query .= "$key = '$value' AND ";
+            }
         }
         $result = self::$db->query($query);
         $count = $result->fetch_array();

@@ -11,6 +11,7 @@ use Controllers\GiftsController;
 use Controllers\SpeakersController;
 use Controllers\UsersController;
 use Controllers\APIEvents;
+use Controllers\APIGifts;
 use Controllers\APISpeakers;
 use Controllers\PagesController;
 use Controllers\RegisterController;
@@ -66,6 +67,8 @@ $router->get('/api/events-schedule', [APIEvents::class, 'index']);
 
 $router->get('/api/speakers', [APISpeakers::class, 'index']);
 $router->get('/api/speaker', [APISpeakers::class, 'speaker']);
+
+$router->get('/api/gifts', [APIGifts::class, 'index']);
 
 $router->get('/admin/users', [UsersController::class, 'index']);
 
