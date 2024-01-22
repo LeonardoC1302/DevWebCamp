@@ -20,7 +20,7 @@
             </a>
             <p class="header__text">October 5th-6th - 2024</p>
             <p class="header__text header__text--mode">Online - In-Person</p>
-            <a href="7register" class="header__button">Buy Pass</a>
+            <a href="<?php echo ($_SESSION['id'] == null ? '/register' : '/finish-registration'); ?>" class="header__button">Buy Pass</a>
         </div>
     </div>
 </header>
