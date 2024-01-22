@@ -31,7 +31,7 @@
             <a href="/devwebcamp" class="navigation__link <?php echo current_page('/devwebcamp') ? 'navigation__link--current' : ''; ?>">Events</a>
             <a href="/packages" class="navigation__link <?php echo current_page('/packages') ? 'navigation__link--current' : ''; ?>">Packages</a>
             <a href="/workshops-conferences" class="navigation__link <?php echo current_page('/workshops-conferences') ? 'navigation__link--current' : ''; ?>">Workshops / Conferences</a>
-            <a href="/register" class="navigation__link <?php echo current_page('/register') ? 'navigation__link--current' : ''; ?>">Buy Pass</a>
+            <a href="<?php echo ($_SESSION['id'] == null ? '/register' : '/finish-registration'); ?>" class="navigation__link <?php echo current_page('/register') ? 'navigation__link--current' : ''; ?>">Buy Pass</a>
         </nav>
     </div>
 </div>
