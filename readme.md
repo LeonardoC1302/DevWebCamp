@@ -34,7 +34,7 @@ HOST=
 - Conference and workshop registration
 - Implementations of multiple JavaScript libraries (for animations, charts, etc.)
 
-## Project Screenshots
+## Project Screenshots (some images might be incomplete due to animations)
 ### Public Pages
 ![Home Page](/assets/home.png)
 ![Home Page](/assets/register.png)
